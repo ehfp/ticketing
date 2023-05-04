@@ -1,0 +1,75 @@
+POST https://ticketing.dev/api/users/signup
+content-type: application/json
+
+{
+    "email": "test@test.com",
+    "password": "password"
+}
+
+###
+
+POST https://ticketing.dev/api/users/signin
+content-type: application/json
+
+{
+    "email": "test@test.com",
+    "password": "password"
+}
+
+###
+
+GET https://ticketing.dev/api/users/currentuser
+content-type: application/json
+
+###
+
+POST https://ticketing.dev/api/users/signout
+content-type: application/json
+
+{
+    
+}
+
+###
+
+POST https://ticketing.dev/api/tickets
+content-type: application/json
+
+{
+    "title": "concert",
+    "price": 35
+}
+
+###
+
+GET https://ticketing.dev/api/tickets/
+content-type: application/json
+
+###
+
+PUT https://ticketing.dev/api/tickets/63e2ee1375448459dfae8704
+content-type: application/json
+
+{
+    "title": "NEW CONCERT",
+    "price": 500    
+}
+
+###
+
+POST https://ticketing.dev/api/orders
+content-type: application/json
+
+{
+    "ticketId": "6430b92dee1967c9b5f1a7f9"
+}
+
+###
+
+POST https://ticketing.dev/api/payments
+content-type: application/json
+
+{
+    "orderId": "",
+    "token": "tok_visa"
+}

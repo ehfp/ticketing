@@ -1,0 +1,33 @@
+minikube ssh
+$ eval $(minikube -p minikube docker-env)
+
+$ unset http_proxy
+$ unset https_proxy
+$ unset all_proxy
+sudo ifconfig eth0 mtu 1350
+
+kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission
+
+kubectl get -A ValidatingWebhookConfiguration
+NAME                      CREATED AT
+ingress-nginx-admission   2020-04-22T15:01:33Z
+
+kubectl get svc -n ingress-nginx
+NAME                                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                      AGE
+ingress-nginx-controller             NodePort    10.96.212.217   <none>        80:32268/TCP,443:32683/TCP   2m34s
+ingress-nginx-controller-admission   ClusterIP   10.96.151.42    <none>        443/TCP                      2m34s
+
+switch kubectl clusters between gcloud and minikube:
+
+kubectl config use-context CONTEXT_NAME
+kubectl config get-contexts
+
+gcloud auth application-default login
+gcloud auth login
+
+docker login -u -p docker.io
+
+echo 'export KUBECONFIG=$HOME/.kube/config' >> $HOME/.bashrc
+
+npm config rm proxy
+npm config rm https-proxy
