@@ -7,6 +7,8 @@ const startUp = async () => {
   //   throw new Error('JWT must be defined');
   // }
 
+  console.log('Stargin up...');
+
   if(!process.env.JWT_KEY) {
     process.env.JWT_KEY = 'asdf';
   }
